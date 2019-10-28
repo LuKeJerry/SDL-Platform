@@ -1,0 +1,33 @@
+/******************************************************************************/
+/*  PICK-the-virus - A simple 'one screen' platform engine in ANSI-C and SDL  */
+/******************************************************************************/
+/*                                                                            */
+/*  # History:                                                                */
+/*                                                                            */
+/*  - 13-08-2012: . Added platforms and walls collisions, but would be        */
+/*                better to use pixel-precision detection like from:          */
+/*                http://sdl-collide.sourceforge.net/                         */
+/*                                                                            */
+/*                . Added 'on-the-fly' screen size change with F2/F3 keys     */
+/*                at the moment only 2x and 3x selectable.                    */
+/*                Code still needs lot of rework/optimization in this area    */
+/*                                                                            */
+/*  . 16-08-2012: . Added fullscreen mode - cleaned screen init code          */
+/*                . Added window icon                                         */
+/*                                                                            */
+/*  . 20-08-2012: . Moved definitions and declarations in .h files and        */
+/*                  functions in different, appropriate .c ones               */
+/*                                                                            */
+/*  . 21-08-2012: . Started code optimizations and cleanuop on global,        */
+/*                  static and const variables                                */
+/*                                                                            */
+/*  # TO DO:                                                                  */
+/*                                                                            */
+/*     . Pixel accurate collision                                             */
+/*     . Fonts/Writing on sceen for debug and game info (lifes,energy,etc.)   */
+/*     . Joystick support                                                     */
+/*     . Sound (Music and FX)                                                 */
+/*     . Port to web (JavaScript) with emscripten                             */
+/*     . Port to Amiga 68K with Amiga SDL                                     */
+/*                                                                            */
+/******************************************************************************/

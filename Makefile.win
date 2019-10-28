@@ -1,0 +1,40 @@
+# Project: Pick-the-virus
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = pickthevirus.o timing.o gfxvideo.o sound.o phisics.o
+LINKOBJ  = pickthevirus.o timing.o gfxvideo.o sound.o phisics.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -L"C:/SDL/SDL-1.2.15/lib" -L"C:/SDL/SDL_mixer-1.2.12/lib" -L"C:/Dev-Cpp/SDL/SDL-1.2.15/lib" -L"C:/Dev-Cpp/SDL/SDL_mixer-1.2.12/lib" -mwindows -lmingw32 -lSDLmain -lSDL -lSDL_mixer -lSDL_image -m32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/SDL/SDL-1.2.15/include" -I"C:/SDL/SDL_mixer-1.2.12/include" -I"C:/Users/Luca/Downloads/DropBox/My Dropbox/LukeJerry/misc-stuff/c_cpp_programming/DevCpp-Projects/Pick-the-virus"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/SDL/SDL-1.2.15/include" -I"C:/SDL/SDL_mixer-1.2.12/include" -I"C:/Users/Luca/Downloads/DropBox/My Dropbox/LukeJerry/misc-stuff/c_cpp_programming/DevCpp-Projects/Pick-the-virus"
+BIN      = Pick-the-virus.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32 -std=c99
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+pickthevirus.o: pickthevirus.c
+	$(CC) -c pickthevirus.c -o pickthevirus.o $(CFLAGS)
+
+timing.o: timing.c
+	$(CC) -c timing.c -o timing.o $(CFLAGS)
+
+gfxvideo.o: gfxvideo.c
+	$(CC) -c gfxvideo.c -o gfxvideo.o $(CFLAGS)
+
+sound.o: sound.c
+	$(CC) -c sound.c -o sound.o $(CFLAGS)
+
+phisics.o: phisics.c
+	$(CC) -c phisics.c -o phisics.o $(CFLAGS)
